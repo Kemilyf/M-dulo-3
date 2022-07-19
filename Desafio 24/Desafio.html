@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 24</title>
+    <style>
+         body{
+            background-color: lightblue;
+        }
+        
+        .sortear{
+            color:black;
+            padding: 20px;
+            font-size: 16px;
+            display: inline-flex;
+            justify-content: space-around;
+            cursor: pointer;
+            border: 3px black solid;
+            background-color: rgb(238, 144, 241);
+            text-align: center;
+            justify-items: center;
+            margin: auto;
+            height: 100%;
+            width: 30%;
+            margin-top: 10%;
+
+        }
+        
+    </style>
+</head>
+<body >
+   
+    <button class="sortear" >Nome Sortear</button>
+    
+    <script>
+        window.document.querySelector("button").addEventListener("click", function(_) {
+        const nomes = ["Thayla", "Gabriel", "Pierry", "Leonardo", "João Vitor", "Carlos", "Agatha", "Arya", "Alice", "Kai", "Breno"];
+        const index_maximo = nomes.length - 1;        
+        const index_aleatorio = random(index_maximo); 
+
+        alert(nomes[index_aleatorio]);
+        })
+
+        function random(v) {
+        var t = new Uint8Array(1); 
+        window.crypto.getRandomValues(t);
+        if (t[0] <= v) {
+            return t[0];
+        }
+        return random(v);
+        }
+
+
+    </script>
+</body>
+</html>
+
