@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+    <style type="text/css">
+
+    </style>
+
+    </estilo>
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="main">
+        <div id="form_box">
+            <h2>Cadastro</h2>
+            <form>
+                <div class="linhas_C">
+                    <span>
+                        <label>Nome</label>
+                        <input type="text" id="nome" required>
+                    </span>
+                    <span>
+                        <label>Sobrenome</label>
+                        <input type="text" id="sobrenome" required>
+                    </span>
+                </div>
+
+                <div class="linhas_C">
+                       <span>
+                          <label>Data de nascimento</label>
+                          <input type="date" id="data" required>
+                       </span>
+                       <span>
+                         <label>Formação</label>
+                         <select id="formacao">
+                            <option value="ef">Ensino Fundamental</option>
+                            <option value="em">Ensino Médio</option>
+                            <option value="es">Ensino Superior</option>
+                         </select>
+                       </span>
+                </div>
+
+                <div class="linhas_C">
+                    <span>
+                        <label>Gênero</label>
+                        Masculino
+                        <input type="radio" name="genero" checked>
+                        Feminino
+                        <input type="radio" name="genero">
+                        Outros
+                        <input type="radio" name="genero"> 
+                    </span>
+                </div>
+                <div class="linhas_C">
+                    <span>
+                        <label>Senha</label>
+                        <input type="password" id="senha" required>
+                    </span>
+                    <span>
+                        <label>Confirma senha</label>
+                        <input type="password" id="C_senha" required>
+                    </span>
+                </div>
+                <div class="linhas_C">
+                    <span>
+                        <input type="submit" onclick="validar()" value="Cadastrar" id="btt_cad">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validar(){
+            let nome=document.getElementById('nome');
+            let sobrenome=document.getElementById('sobrenome');
+            let data=document.getElementById('data');
+            let senhaa=document.getElementById('senha');
+            let csenha=document.getElementById('C_senha');
+            let sty_1="2px solid red";// qnd n estiver preenchido
+            let sty_2="1 px solid #f9f9f9";
+
+            input_style(nome,sty_1,sty_2);
+            
+            input_style(sobrenome,sty_1,sty_2);
+            
+            input_style(data,sty_1,sty_2);
+            
+            input_style(senhaa,sty_1,sty_2);
+            
+            input_style(csenha,sty_1,sty_2);
+            
+
+
+        }
+        function input_style(input,style1,style2){
+        if(!input.checkValidity()){
+            input.style.border=style_1;
+            return input.style.border;
+        }
+        if(input.checkValidity()){
+            input.style.border=style_2;
+            return input.style.border;
+        }
+        }
+    </script>
+</body>
+</html>
