@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div class="carrossel-container">
+        <div class="slides">
+            <div class="numText">1/4</div>
+            <img src="img/Fantasia de fada.jpg" >
+            <div class="text">Fantasia de fada marrom</div>
+        </div>
+
+        <div class="carrossel-container">
+            <div class="slides">
+                <div class="numText">2/4</div>
+                <img src="img/download (13).jpg" >
+                <div class="text">Fantasia borboleta dark</div>
+            </div>
+
+        <div class="carrossel-container">
+                <div class="slidefade">
+                    <div class="numText">3/4</div>
+                    <img src="img/Garotas Más.jpg" >
+                    <div class="text">Fantasia tinker bell</div>
+                </div>
+
+        <div class="carrossel-container">
+                    <div class="slidefade">
+                        <div class="numText">4/4</div>
+                        <img src="img/𝑎𝑚𝑜𝑟 𝑏𝑎𝑛𝑑𝑖𝑑𝑜 __ 𝘉𝘳𝘺𝘤𝘦 𝘏𝘢𝘭𝘭 __ 𝘍𝘪𝘯𝘢𝘭𝘪𝘻𝘢𝘥𝘢.jpg" >
+                        <div class="text">Fantasia anjo da morte</div>
+                    </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align: center;">
+        <span class="ponto" onclick="slideAtual(1)"></span>
+        <span class="ponto" onclick="slideAtual(2)"></span>
+        <span class="ponto" onclick="slideAtual(3)"></span>
+        <span class="ponto" onclick="slideAtual(4)"></span>
+       
+        
+    
+    
+    </div>
+    <script>
+        let slideIndex = 1;
+        mostraSlides(slideIndex);
+
+        function plusSlides(n){
+               mostraSlides(slideIndex += n)
+        }
+        function slideAtual(n){
+            mostraSlides(slideIndex = n)
+
+        }
+        function mostraSlides(n){
+        let i;
+        let Slide = document.getElementByIdClassName("slidesfade");
+        let pontos = document.getElementsByClassName("ponto");
+
+        if(n > Slide.length){
+            slideTndex = 1;
+
+        }
+
+        if(n < 1){
+            slideIndex=Slide.legth;
+        }
+
+        for(i=0; i < Slide.length; i++){
+            Slide[i].style.display="none";
+        }
+
+        for(1=0; 1 < pontos.length; 1++){
+            pontos[i].className = pontos[i].className.replace("active", "");
+        }
+        Slide[slideIndex-1].style.display = "block";
+        pontos[slideIndex-1].className += " active";
+        
+    }
+    </script>
+    
+
+</body>
+</html>
